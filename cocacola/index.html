@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한국 코카-콜라</title>
+  <link rel="icon" href="img/favicon.png">
+  
+  <!-- bootstrap ----------------------------------------------------------------------------------------->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- /bootstrap -->
+
+  <!-- slick slider ---------------------------------------------------------------------------------------->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <!-- /slick slider -->
+
+  <!-- fontawesom ------------------------------------------------------------------------------------------------------->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- css 외부파일 -------------------------------------------------------------------------------------------->
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    $(document).ready(function(){
+      $('#slider .slider').slick({
+        centerMode: true,
+          centerPadding: '80px', // 양쪽에 보이는 슬라이드 넓이
+          slidesToShow: 1,
+          arrows: false,
+          dots: true,
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                centerPadding: '40px',
+              }
+            }
+          ]
+      });
+
+      $('#month-pick .slider').slick({
+        centerMode: true,
+          centerPadding: '0px', // 양쪽에 보이는 슬라이드 넓이
+          slidesToShow: 3,
+          arrows: false,
+          dots: true,
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                centerPadding: '40px',
+                slidesToShow: 1,
+              }
+            }
+          ]
+      });
+
+    });
+  </script>
+</head>
+<body>
+  <!-- navigation ------------------------------------------------------------------------------------->
+  <nav class="navbar navbar-expand-sm">
+    <div class="container">
+      <a class="navbar-brand" href="#"><img src="img/Coke-company-logo-black.svg" alt="coca-cola logo"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar-m">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <!-- <div>
+          <a class="btn" hre="#" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar-m">&times;</a>
+        </div> -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Brands</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button">Our Company <i class="fa-solid fa-chevron-right"></i></a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Coca-Cola Company</a></li>
+              <li><a class="dropdown-item" href="#">Since 1886</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button">Discover <i class="fa-solid fa-chevron-right"></i></a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Brand Story</a></li>
+              <li><a class="dropdown-item" href="#">Coke & Meal</a></li>
+              <li><a class="dropdown-item" href="#">Originals</a></li>
+              <li><a class="dropdown-item" href="#">Opener</a></li>
+              <li><a class="dropdown-item" href="#">Creations</a></li>
+              <li><a class="dropdown-item" href="#">CokePLAY App</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sustainability</a>
+          </li>          
+        </ul>
+      </div>
+      <!-- 네비게이션 서브메뉴 모바일용 -->
+      <div id="collapsibleNavbar-m" class="collapse navbar-collapse">
+        <div><a href="#" id="closeMenu" class="btn" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar-m">&times;</a></div>
+        <button class="accordion">Section 1</button>
+        <div class="panel">
+          <p>1Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+
+        <button class="accordion">Section 2</button>
+        <div class="panel">
+          <p>2Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+
+        <button class="accordion">Section 3</button>
+        <div class="panel">
+          <p>3Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+
+        <script>
+        //var acc = document.getElementsByClassName("accordion");   
+        var acc = document.querySelectorAll("#collapsibleNavbar-m .accordion");    
+        var i;
+        
+        for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+
+          /* accordion 형태로 만들기 */            
+          //var panels = document.getElementsByClassName("panel");
+          var panels = document.querySelectorAll("#collapsibleNavbar-m .panel");
+          for (j = 0; j < panels.length; j++){
+            if(acc[j]!== this){
+              acc[j].classList.remove("active");
+            }
+            if (panels[j].style.maxHeight) {
+              
+              if(panels[j]!==this.nextElementSibling){
+                panels[j].style.maxHeight = null;
+              }
+            }
+          } 
+
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+              panel.style.maxHeight = null;
+            } else {
+              panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+          });
+        }
+        </script>
+        
+  </div>
+   
+   
+
+   
+  </nav>
+  <!-- /navigation -->
+
+   
+  <!-- slider ------------------------------------------------------------------------------------->
+  <div id="slider" class="slider-container">
+    <div class="slider">
+      <div class="slide">
+        <img class="slider-pc" src="img/slider01.webp" alt="new coca cola">
+        <img class="slider-m" src="img/slider01_m.webp" alt="new coca cola">
+        <div class="caption">
+          <h3>코카-콜라와 뷔,<br>이토록 짜릿한 만남!</h3>
+          <p>뷔, 코카-콜라 앰배서더 발탁</p>
+        </div>
+        <div class="more">
+          <a class="btn btn-primary" href="#">자세히 보기</a>
+        </div>
+      
+      </div>
+      <div class="slide">
+        <img class="slider-pc" src="img/slider02.webp" alt="신흥시장">
+        <img class="slider-m" src="img/slider02_m.webp" alt="신흥시장">
+      </div>
+      <div class="slide">
+        <img class="slider-pc" src="img/slider03.webp" alt="나의 미식 파트너">
+        <img class="slider-m" src="img/slider03_m.webp" alt="나의 미식 파트너">
+      </div>
+      <div class="slide">
+        <img class="slider-pc" src="img/slider04.webp" alt="코카-콜라 X 신흥시장">
+        <img class="slider-m" src="img/slider04_m.webp" alt="코카-콜라 X 신흥시장">
+      </div>
+      <div class="slide">
+        <img class="slider-pc" src="img/slider05.webp" alt="코카-콜라 X 블루리본 서베이">
+        <img class="slider-m" src="img/slider05_m.webp" alt="코카-콜라 X 블루리본 서베이">
+      </div>
+    </div>
+  </div>
+  <!-- /slider -->
+
+  <!-- 이달의 PICK ------------------------------------------------------------------------------------->
+  <div id="month-pick" class="slider-container">
+    <h1>이달의 PICK</h1>
+    <div class="row slider">
+      <div class="col-md-4 slide">
+        <div class="thumbnail">
+          <img src="img/pic01.png" alt="닥터페퍼제로">
+          <p><strong>달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니</strong></p>          
+          <button class="btn">더 보기 <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+      <div class="col-md-4 slide">
+        <div class="thumbnail">
+          <img src="img/pic02.png" alt="스프라이트제로">
+          <p><strong>달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니</strong></p>          
+          <button class="btn">더 보기 <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+      <div class="col-md-4 slide">
+        <div class="thumbnail">
+          <img src="img/pic03.png" alt="파이웨이드제로">
+          <p><strong>달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니</strong></p>          
+          <button class="btn">더 보기 <i class="fa-solid fa-arrow-right"></i></button>
+        </div>        
+      </div>
+    </div>
+  </div>
+  <!-- /이달의 PICK -->
+
+
+  <!-- story ------------------------------------------------------------------------------------>
+  <div id="story" class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h3>코카-콜라 Real Magic 스토리</h3>
+        <div>
+          1886년 탄생 이후, 코카-콜라가 걸어온 130여 년의 짜릿한 여정! 그 마법같은 이야기 속으로 초대합니다.
+        </div>
+        <div>
+          <a class="btn btn-outline-dark" href="#">자세히 보기</a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div>
+          <img src="img/story01.webp" alt="coca-cola">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /story -->
+
+  <!-- tomorrow ------------------------------------------------------------------------------------>
+  <div id="tomorrow" class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div>
+          <img src="img/tomorrow01.webp" alt="coca-cola">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h3>지속 가능한 미래</h3>
+        <div>
+          지속 가능한 미래를 만들기 위한 코카-콜라의 다양한 활동들을 만나보세요. 전 세계 사람들의 삶과 지역사회에 긍정적인 변화를 만들어 나가기 위해 노력하고 있습니다.
+        </div>
+        <div>
+          <a class="btn btn-outline-dark" href="#">자세히 보기</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /tomorrow -->
+
+  <!-- 브랜드 살펴보기 ------------------------------------------------------------------------------>
+  <div id="brand" class="container">
+    <h1>브랜드 살펴보기</h1>
+    <div class="row">
+      <div class="col-md-4">
+        <img src="img/brand01.webp" alt="cocal cola">
+      </div>
+      <div class="col-md-4">
+        <img src="img/brand02.webp" alt="sprite">
+      </div>
+      <div class="col-md-4">
+        <img src="img/brand03.webp" alt="fanta">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <img src="img/brand04.webp" alt="dr peppre">
+      </div>
+      <div class="col-md-4">
+        <img src="img/brand05.webp" alt="powerade">
+      </div>
+      <div class="col-md-4">
+        <img src="img/brand06.webp" alt="georgia coffe">
+      </div>
+    </div>
+
+    <a class="btn btn-outline-dark" href="#">모두 보기</a>
+  </div>
+  <!-- brand mobile용 -->
+  <div id="brand-m" class="container">
+    <h1>브랜드 살펴보기</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <img src="img/brand01.webp" alt="cocal cola">
+      </div>
+      <div class="col-md-6">
+        <img src="img/brand02.webp" alt="sprite">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <img src="img/brand03.webp" alt="fanta">
+      </div>
+      <div class="col-md-6">
+        <img src="img/brand04.webp" alt="dr peppre">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <img src="img/brand05.webp" alt="powerade">
+      </div>
+      <div class="col-md-6">
+        <img src="img/brand06.webp" alt="georgia coffe">
+      </div>
+    </div>
+
+    <a class="btn btn-outline-dark" href="#">모두 보기</a>
+  </div>
+  <!-- /브랜드 살펴보기 -->
+
+  <!-- footer -------------------------------------------------------------------------------------->
+  <footer class="container-fluid">
+    <div id="footer-pc" class="container">
+      <img src="img/logo-white-large.svg" alt="coca-cola logo">
+      <hr style="border:1px solid white">
+      <div class="row">
+        <div class="col-md-2">
+          <h6>소개</h6>
+          <ul>
+            <li>기업 소개</li>
+            <li>히스토리</li>
+            <li>채용</li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h6>도움이 필요하세요?</h6>
+          <ul>
+            <li>사이트 맵</li>
+            <li>고객 안내</li>
+          </ul>          
+        </div> 
+        <div class="col-md-6">
+          <h6>법적고지</h6>
+          <ul>
+            <li>이용 약관</li>
+            <li>쿠키 정책</li>
+            <li>쿠키 설정</li>
+          </ul> 
+        </div>
+        <div class="col-md-2">
+          <i class="fa-brands fa-youtube"></i>
+          <i class="fa-brands fa-x-twitter"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-facebook"></i>
+        </div>
+      </div>
+      <hr style="border: 1px solid white;">
+      © 2024 The Coca‑Cola Company. 판권 소유
+    </div>
+
+    <!-- mobile용 footer -->
+    <div id="footer-m">
+       <button class="accordion">Section 1</button>
+        <div class="panel">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+
+        <button class="accordion">Section 2</button>
+        <div class="panel">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+
+        <button class="accordion">Section 3</button>
+        <div class="panel">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+
+        <script>
+        //var acc = document.getElementsByClassName("accordion");
+        var acc = document.querySelectorAll("#footer-m .accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+              panel.style.maxHeight = null;
+            } else {
+              panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+          });
+        }
+        </script>
+    </div> 
+  </footer> 
+  <!-- /footer -->
+  
+</body>
+</html>

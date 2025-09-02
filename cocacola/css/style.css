@@ -1,0 +1,427 @@
+/* bootstrap의 container */
+.container{
+    padding: 50px 5%; /* 위아래 0, 좌우 5% */
+  }
+
+/* Navigation **********************************************************************************/
+
+/* 네비게이션 */  
+.navbar{
+  background: white;
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 70px !important;
+}
+
+/* 모바일용 서브메뉴가 안보이게 */
+#collapsibleNavbar-m{ opacity: 0 !important;}
+
+/* 문서 배경색 */
+body{background: #eeeeee;}
+
+/* 1depth에 마우스가 올라갔을 때 2depth(서브메뉴)가 나오게 */
+#collapsibleNavbar .nav-item:hover .dropdown-menu {
+  display: block;
+}
+
+/* .dropdown-toggle의 뒷부분을 찾아서 border를 0 */
+#collapsibleNavbar .nav-item .dropdown-toggle::after{
+  border:0 !important; 
+}
+/* 화살표가 회전하는 애니메이션 적용 */
+#collapsibleNavbar .nav-item:hover i{
+  animation: ani01 0.5s ease-in-out forwards !important;
+  
+  /* animation-name: ani01; */
+  /* animation-duration: 0.5s; */
+  /* animation-timing-function: ease-in-out; */
+  
+  /* 애니메이션 종료후 마지막 상태(last frame) 유지. 원래 상태로 돌아가지 않음. */
+  /* animation-fill-mode: forwards;   */
+  
+}
+
+/* animation 정의. 이름은 ani01 */
+@keyframes ani01 {
+  0%{transform: rotate(0deg);} /* 처음 상태 */
+  100%{transform: rotate(90deg);} /* 마지막 상태 */
+  
+}
+
+
+/* slider *************************************************************************************************************************/
+
+/* pc용 slider 이미지는 보이고, 모바일용 slider 이미지는 안보이게 */
+.slider-pc{display: block !important;}  
+.slider-m{display: none !important;}  
+
+/* slider container 설정 */
+.slider-container { 
+  max-width: 1500px; /* 최대 1500px 이하 */
+  height: 570px !important;
+  margin: 50px auto; /* 가로방향으로 가운데 정렬 */
+}
+
+/* 부모를 기준으로 자식의 위치를 설정하기 위해서 */
+.slide{
+  position: relative; /* 부모의 position 설정 */
+}
+
+/* 자식 position:absolute 설정. */
+.slide .caption, 
+.slide .more{
+  position: absolute; /*  grouping */
+}
+/* 부모를 기준으로 위치 지정 */
+.slide .caption{
+  left: 5px;
+  top:200px;
+}
+/* 부모를 기준으로 위치 지정 */
+.slide .more{
+  left: 5px;
+  top:300px;
+}
+/* 슬라이드 간 간격 */
+.slider .slide {
+  margin: 0 10px; /* 상하 0, 좌우 10px */
+}
+/* 슬라이드 이미지 설정 */
+.slider .slide img {
+  width: 100%;
+  height: 570px;
+  border-radius: 10px; /* 모서리를 둥글게 */
+}
+/* 버튼 설정. .btn은 bootstrap에 있는 클래스명 */
+.slider .slide .btn{
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  padding-left: 50px;
+  padding-right: 50px;
+  border:none;
+  border-radius: 50px;
+}
+
+
+/* 이달의 pick ****************************************************************/
+
+#month-pick{
+  padding:0 200px !important;
+}
+#month-pick .thumbnail{
+  border-radius: 10px !important;
+  background: white;
+}
+#month-pick .thumbnail img{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 100%;
+  height: 300px;
+}
+
+
+/* story ***************************************************************************/
+
+/* 부모박스에 이미지를 딱 맞추기 위해 */
+#story .col-md-6 img,
+#tomorrow .col-md-6 img{
+  width:100%;
+  height: 100%;
+}
+/* 디버깅용. 배경을 파란색으로 설정해서 파악하기 쉽게 */
+#story{
+  background: blue;
+}
+/* 박스 설정 */
+#story .col-md-6,
+#tomorrow .col-md-6
+{
+  border-radius: 10px !important;
+  background: white;
+  height:500px !important;
+  padding:0; /* 안쪽 여백 없애기. 이미지가 부모에 딱맞게 하기 위해 */
+  
+}
+/* 박스안의 이미지 설정. 부모 박스와 딱 맞게 설정 */
+#story .col-md-6 img,
+#tomorrow .col-md-6 img
+{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+/* flex사용. .row는 container(부모)역할. */
+/* 부모(컨테이너)를 기준으로 자식(아이템)의 위치를 일괄 지정 */
+#tomorrow .row,
+#story .row{
+  display: flex !important; /* container에 display:flex 설정*/
+  align-items: center !important;/* container기준으로 자식(item)을 세로 가운데 설정 */
+  background: green;
+  height: 600px !important;
+  
+}
+/* 자식(아이템) 개별적으로 위치 설정 */
+#story .col-md-6:nth-child(1){
+  align-self: flex-start !important; /* 부모의 세로 위쪽에 맞춤 */    
+}
+/* 자식(아이템) 개별적으로 위치 설정 */
+#story .col-md-6:nth-child(2){
+  align-self:flex-end !important; /* 부모의 세로 아래에 맞춤 */    
+}
+/* 자식(아이템) 개별적으로 위치 설정 */
+#tomorrow .col-md-6:nth-child(1){
+  align-self: flex-end !important;     /* 부모의 세로 아래에 맞춤 */  
+}
+/* 자식(아이템) 개별적으로 위치 설정 */
+#tomorrow .col-md-6:nth-child(2){
+  align-self:flex-start !important; /* 부모의 세로 위쪽에 맞춤 */  
+}
+/* 첫번째박스를 기준으로 두번째 박스가 겹쳐지도록 */
+#tomorrow .col-md-6:nth-child(1),
+#story .col-md-6:nth-child(1){
+  margin-right: -100px !important; /* 왼쪽박스를 기준으로 오른쪽박스를 왼쪽으로 이동해서 겹치게 */
+}
+/* 1번박스가 2번박스보다 위로 오도록 설정 */
+#story .col-md-6:nth-child(1){
+  z-index: 999;
+}
+/* 이미지박스의 크기를 더 크게 설정 */
+#story .col-md-6:nth-child(2),
+#tomorrow .col-md-6:nth-child(1){
+  width:670px;
+}
+
+
+
+/* brand ***********************************************************************************/
+
+/* pc용 brand와 mobile용 brand를 만들어서 교체하는 방식으로 구현 */
+#brand{display: block;} /* pc용 brand는 보이게*/
+#brand-m{display: none;} /* mobile용 brand는 안보이게 */
+/* 박스 설정 */
+#brand .col-md-4{
+  background: white;
+  box-sizing: border-box; /* width안에 padding과 border를 포함 */
+  margin: 10px;
+  transition: 0.5s; /* 0.5초동안 애니메이션(transition) 효과*/
+  width:230px;
+  height: 230px;
+  border-radius: 10px !important;
+
+}
+/* 박스에 이미지 딱 맞추기 */
+#brand .col-md-4 img{
+  width: 100%;  
+}
+/* 박스에 마우스가 올라갔을 때 확대 */
+#brand .col-md-4:hover{
+  transform: scale(1.05); /* 1.5배 확대 */
+}
+
+
+/* footer ***************************************************************************************/
+
+/* 배경색 설정*/
+footer.container-fluid{
+  background: black;
+} 
+
+/* pc용 footer 내용과 mobile용 footer 내용을 미리 만들어 두고 교체방식으로 구현 */
+#footer-pc{
+  display: block; /* pc용 보이게 */
+}
+#footer-m{
+  display: none; /* 모바일용 안보이게 */
+}
+
+/* ##################################################################################################################
+                                                        mobile 
+#################################################################################################################### */
+
+/* device 가로 크기가 767px 이하일 때 적용됨 */
+@media screen and (max-width:767px) {
+  
+  /* 모바일용 서브메뉴를 1depth에 마우스 커서가 올라갔을 때(hover) 2depth가 펼쳐지는 방식 그대로 사용할 경우 */
+  /* #collapsibleNavbar{
+    position: fixed !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: white !important; 
+    z-index: 999999999 !important;
+    color: black !important;
+    top:0;
+    left: 0;
+    
+    } */
+    
+    
+/* 코카콜라아이콘, 햄버거메뉴 위로 올라가게 조정 */
+nav .container{padding:0 10px !important;}
+/* 모바일용 2depth메뉴 안보이게 */
+#collapsibleNavbar-m{ opacity: 1 !important;}
+/* 모바일용 2depth메뉴 설정. full screen */
+#collapsibleNavbar-m{
+  position: fixed !important; /* 위치 고정 */
+  width: 100% !important;
+  height: 100% !important;
+  top:0;
+  left: 0;
+  background-color: white !important; 
+  z-index: 999999999 !important; /* 맨 위로 올라오게 설정 */
+  color: black !important;
+}
+
+/* 서브메뉴 버튼 설정  */
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer; /* 커서모양 손가락모양으로 변경. 클릭하도록 유도 */
+  padding: 18px;
+  width: 100%;
+  border: none; /* border 없애기 */
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+/* 배경색 변경 */
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+/* '>' 화살표 설정 */
+.accordion:after { 
+  content: '\f054'; /* '>' 화살표 아이콘  */
+  font-family: "Font Awesome 7 Free"; /* fontawesom 버젼 7 무료 글꼴*/
+  color: #777;
+  font-weight: bold;
+  float: right; /* 화살표를 가로방향 오른쪽으로 정렬 */
+  margin-left: 5px;
+}
+/* down 화살표 설정 */
+.active:after {  
+  content:'\f078'; /* down 화살표 아이콘  */
+}
+/* 버튼클릭시 펼쳐지는 박스 설정  */
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0; /* 처음에는 높이가 없음. 안보이게. */
+  overflow: hidden; /* 부모박스 범위를 벗어나면 잘리게 */
+  transition: max-height 0.2s ease-out;
+}
+
+
+/* slider **************************************/
+
+/* 글자 가운데 정렬 */
+.slide{ text-align: center !important;}
+/* 슬라이더 크기 조절 */
+.slider-container,
+.slider,
+.slider .slide,
+.slider .slide img {
+  width: 100%;
+  height: 700px !important; /* 높이를 크게 설정 */
+  border-radius: 10px;
+}
+/* pc용 슬라이더와 모바일용 슬라이더를 미리 만들어 두고 교체방식으로 구현 */
+.slider-pc{
+  display: none !important; /* pc용 슬라이더 안보이게 */
+}  
+.slider-m{
+  display: block !important; /* 모바일용 슬라이더 보이게 */
+}   
+
+/* 글자와 버튼을 가운데 정렬하기 위해서 부모의 크기 조절 */
+.slide .caption,
+.slide .more{      
+  width: 100%;  
+}
+/* 글자 위치 조절 */
+.slide .caption{     
+  top: 550px !important;
+}
+/* 버튼 위치 조절 */
+.slide .more{     
+  top: 650px !important;     
+}
+/* 이달의 pick박스 설정 */
+#month-pick{
+  padding: 50px 0 !important;
+  margin-bottom: 50px !important;
+  background: yellow;
+  height: 500px !important;
+  padding-right: 0 !important;
+}
+/* 이달의 pick박스 안의 이미지 설정 */
+#month-pick .thumbnail img{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 100%;
+  height: 300px !important;
+}
+/* 1번박스 설정. 1번박스를 기준으로 2번박스 위치 설정 */
+#story .col-md-6:nth-child(1){
+  width:400px !important;
+  height: 200px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: -50px !important; /* 아래쪽 박스가 위로 올라와서 겹치게 */
+}
+/* pc용 brand와 mobile용 brand를 미리 만들어서 교체방식으로 구현 */
+#brand {
+  display: none; /* pc용 brand 안보이게 */
+}
+#brand-m {
+  display: block; /* mobile용 brand 보이게 */
+}
+/* 모바일용 brand안의 박스설정 */
+#brand-m .col-md-6{
+  background: white;
+  box-sizing: border-box;
+  margin: 10px;
+  transition: 0.5s;
+  width:210px; /* 가로사이즈를 pc용보다 작게*/
+  height: 210px; /* 세로사이즈를 pc용보다 작게*/
+  border-radius: 10px !important;
+
+}
+/* 부모박스에 이미지 크기 딱 맞게 */
+#brand-m .col-md-6 img{
+  width: 100%;  
+}
+/* 마우스가 올라갔을때 확대 */
+#brand-m .col-md-6:hover{
+  transform: scale(1.05);
+}
+/* 모바일용 footer와 pc용 footer를 미리 만들어서 교체방식으로 구현 */
+#footer-pc{
+  display: none; /* pc용 footert 안보이게 */
+}
+#footer-m{
+  display: block; /* mobile용 footer 보이게 */
+  background: black;
+  color:white;    
+}
+/* 전체적으로 배경색을 검은색으로,글자색은 흰색으로 통일. */
+#footer-m button,
+#footer-m div{
+  background: black;
+  color:white;
+}
+
+/* down화살표를 클릭시 up화살표로 변경 설정 */
+#footer-m .accordion:after {
+  content: '\f107'; /* down 화살표 아이콘  */
+  font-family: "Font Awesome 7 Free"; /* fontawesom 버젼 7 무료 글꼴*/
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+#footer-m .active:after {
+  content:'\f106'; /* up 화살표 아이콘  */
+}
+
+}
